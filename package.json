@@ -1,0 +1,31 @@
+{
+  "name": "devjobs",
+  "version": "1.0.0",
+  "description": "Portal dev Jobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielMorales7/devJobs.git"
+  },
+  "keywords": [
+    "devJobs"
+  ],
+  "author": "Daniel Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielMorales7/devJobs/issues"
+  },
+  "homepage": "https://github.com/DanielMorales7/devJobs#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
