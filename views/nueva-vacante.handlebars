@@ -1,0 +1,53 @@
+<main class="contenedor">
+    {{#if mensajes}}
+        <div class="error alerta">{{mensajes}}</div>
+    {{/if }}
+    <form {{#if editar}} action="/vacantes/editar/{{vacante.url}}" {{else}} action="/vacantes/nueva" {{/if}}  method="POST" class="default-form">
+        <h3>Información general</h3>
+
+        <div class="campo">
+            <label for="titulo">Título de la vacante</label>
+            <input type="text" name="titulo" placeholder="Ej: React Developer" {{#if editar}} value="{{vacante.titulo}}" {{else}} {{/if}} required>
+        </div>
+        <div class="campo">
+            <label for="empresa">Empresa</label>
+            <input type="text" name="empresa" placeholder="Ej: Empresa que contrata" {{#if editar}} value="{{vacante.empresa}}" {{else}} {{/if}} required >
+        </div>
+        <div class="campo">
+            <label for="ubicacion">Ubicacion</label>
+            <input type="text" name="ubicacion" placeholder="Ej: México o Remoto" {{#if editar}} value="{{vacante.ubicacion}}" {{else}} {{/if}} required >
+        </div>
+        <div class="campo">
+            <label for="salario">Salario (MX)</label>
+            <input type="text" name="salario" placeholder="Ej: 8,000 pesos mensuales" {{#if editar}} value="{{vacante.salario}}" {{else}} {{/if}} required>
+        </div>
+        <div class="campo">
+            <label for="contrato">Contrato</label>
+            <select name="contrato" >
+                <option value="" disabled selected >-- Selecciona --</option>
+                <option value="Freelance" {{#if F }} selected="selected" {{else}} {{/if}} >Freelance </option>
+                <option value="Tiempo Completo" {{#if TC }} selected="selected" {{else}} {{/if}} >Tiempo Completo</option>
+                <option value="Medio Tiempo" {{#if MT }} selected="selected" {{else}} {{/if}}  >Medio Tiempo</option>
+                <option value="Por proyecto"  {{#if PP }} selected="selected" {{else}} {{/if}}  >Por proyecto</option>
+            </select>
+        </div>
+        <h3> Descripción del puesto</h3>
+
+        <div class="campo descripcion">
+            <label >Descripción del puesto</label>
+            <input type="hidden" id="x" {{#if editar}} value="{{{vacante.descripcion}}}" {{else}} {{/if}} name="descripcion">
+            <trix-editor input="x" ></trix-editor>
+        </div>
+
+        <h3>Conocimientos</h3>
+        <ul class="lista-conocimientos">
+            {{#seleccionarSkill }}
+            {{/seleccionarSkill}}
+        </ul>
+
+        <div class="campo centrar-horizontal" >
+            <input type="submit" {{#if editar}} value="Editar Vacante" {{else}} value="Publicar Vacante"  {{/if}}  class="btn btn-azul" >
+        </div>
+
+    </form>
+</main>

@@ -22,10 +22,32 @@
   },
   "homepage": "https://github.com/DanielMorales7/devJobs#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "axios": "^1.3.0",
+    "bcrypt": "^5.1.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.6"
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "express-validator": "^5.3.1",
+    "handlebars": "^4.7.7",
+    "handlebars-helper-import": "^2.4.0",
+    "handlebars-helpers": "^0.10.0",
+    "mongoose": "^6.8.4",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "session": "^0.1.0",
+    "shortid": "^2.2.16",
+    "slug": "^8.2.2",
+    "sweetalert2": "^11.7.1"
   },
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "nodemon": "^2.0.20"
   }
 }

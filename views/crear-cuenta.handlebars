@@ -1,0 +1,29 @@
+{{#if mensajes}}
+    <div class="error alerta">{{mensajes}}</div>
+{{/if }}
+<main class="contenedor">
+    <form action="/crear-cuenta" method="POST" class="default-form">
+        <div class="campo">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="campo">
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="Tu e-mail" required>
+        </div>
+        <div class="campo">
+            <label>Contraseña</label>
+            <input type="password" name="password" placeholder="Tu contraseña" required>
+        </div>
+        <div class="campo">
+            <label>Repitir Contraseña</label>
+            <input type="password" name="confirmar" placeholder="Repite tu contraseña" required>
+        </div>
+        <div class="campo acciones">
+            <a href="/iniciar-sesion">Volver a Iniciar Sesión</a>
+        </div>
+        <div class="campo">
+            <input type="submit" value="Crear cuenta" class="btn btn-azul">
+        </div>
+    </form>
+</main>
