@@ -165,7 +165,7 @@ const editarPerfil = async(req, res)=>{
     
     await usuario.save();
     
-    console.log(usuario);
+    //console.log(usuario);
 
     res.redirect('/administracion');
 
