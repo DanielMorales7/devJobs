@@ -8,7 +8,7 @@ import { autenticarUsuario, mostrarPanel, verificarUsuario, cerrarSesion, mostra
 
 router.get('/', paginaIndex); 
 
-// Vacantes
+// Vacantes 
 router.route('/vacantes/nueva')
     .get(verificarUsuario, nuevaVacante )
     .post(verificarUsuario, validarVacante , agregarVacante);

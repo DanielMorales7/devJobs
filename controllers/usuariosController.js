@@ -91,7 +91,7 @@ const validarRegistro = async (req, res, next) =>{
     errores = req.validationErrors();
 
     if(errores || usuario){
-        //Si hay errores
+        //Si hay errores uno
 
         //se itera el array de errores y el mensaje de error se asigna a flash error
         //req.flash('error', errores.map(error => error.msg));
@@ -135,7 +135,9 @@ const formIniciarSesion = (req, res) =>{
 const formEditarPerfil = (req, res) =>{
 
     let mensajes = false;
-
+    
+    console.log(req.user.imagen);
+    
     res.render('editar-perfil',{
         nombrePagina:'Editar Perfil',
         usuario: req.user,
@@ -162,8 +164,10 @@ const editarPerfil = async(req, res)=>{
     if(req.file) {
         usuario.imagen = req.file.filename;
     }
-
+    
     await usuario.save();
+    
+    //console.log(usuario);
 
     res.redirect('/administracion');
 
