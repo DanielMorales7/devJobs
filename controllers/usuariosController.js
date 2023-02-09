@@ -162,8 +162,10 @@ const editarPerfil = async(req, res)=>{
     if(req.file) {
         usuario.imagen = req.file.filename;
     }
-
+    
     await usuario.save();
+    
+    console.log(usuario);
 
     res.redirect('/administracion');
 
