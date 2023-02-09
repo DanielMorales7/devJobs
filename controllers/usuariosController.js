@@ -25,7 +25,7 @@ const subirImagen = (req, res, next) =>{
 }
 
 // Opciones de Multer
-const filePath = fileURLToPath(new URL('../../devJobs/public/uploads/perfiles', import.meta.url));
+const filePath = fileURLToPath(new URL('../../public/uploads/perfiles', import.meta.url));
 
 const fileStorage = multer.diskStorage({
     destination : (req, file, cb) => {
