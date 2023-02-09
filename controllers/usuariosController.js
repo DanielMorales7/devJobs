@@ -91,7 +91,7 @@ const validarRegistro = async (req, res, next) =>{
     errores = req.validationErrors();
 
     if(errores || usuario){
-        //Si hay errores
+        //Si hay errores uno
 
         //se itera el array de errores y el mensaje de error se asigna a flash error
         //req.flash('error', errores.map(error => error.msg));
