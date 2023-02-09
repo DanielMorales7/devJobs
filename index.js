@@ -12,6 +12,7 @@ import expressValidator from 'express-validator';
 import flash from 'connect-flash';
 import session from 'express-session';
 import passport from './config/passport.js';
+import createError from 'http-errors';
 
 const app = express();
 //habilitamos bosy-parser
@@ -59,6 +60,21 @@ app.use((req, res, next) => {
 })
 
 app.use('/', router);
+
+//manejo del error para el siguiente middelware
+app.use((req, res, next) => {
+    next(createError(404, 'No encontrado'))
+});
+
+//Administración de los errores
+
+app.use((error, req, res, next) => {
+    res.locals.mensaje = error.message;
+    const status = error.status || 500;
+    res.locals.status = status;
+    res.status(status);
+    res.render('error');
+})
 
 app.listen(port, () => {
 

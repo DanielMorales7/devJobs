@@ -36,6 +36,7 @@
     "handlebars": "^4.7.7",
     "handlebars-helper-import": "^2.4.0",
     "handlebars-helpers": "^0.10.0",
+    "http-errors": "^2.0.0",
     "mongoose": "^6.8.4",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.1",
