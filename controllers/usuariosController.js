@@ -135,7 +135,7 @@ const formIniciarSesion = (req, res) =>{
 const formEditarPerfil = (req, res) =>{
 
     let mensajes = false;
-
+    console.log(req.user.imagen)
     res.render('editar-perfil',{
         nombrePagina:'Editar Perfil',
         usuario: req.user,
